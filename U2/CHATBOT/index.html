@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatBot</title>
+    <title>Motocicleta</title>
+    <link rel="icon" href="C:\Users\Six\Documents\GitHub\IC_Tics\U2\CHATBOT\imagenes/moto.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header>
-        <img src="C:\Users\SixteenTharth16\Desktop\CHATBOT\imagenes\izquierda.jpg" alt="Imagen izquierda" class="side-image">
+        <img src="C:\Users\Six\Documents\GitHub\IC_Tics\U2\CHATBOT\imagenes/izquierda.jpg" alt="Imagen izquierda" class="side-image">
         <h1>RECOMENDACION DE MOTOCICLETAS</h1>
-        <img src="C:\Users\SixteenTharth16\Desktop\CHATBOT\imagenes\derecha.jpg" alt="Imagen derecha" class="side-image">
+        <img src="C:\Users\Six\Documents\GitHub\IC_Tics\U2\CHATBOT\imagenes/derecha.jpg" alt="Imagen derecha" class="side-image">
     </header>
     <main>
         <div id="chat-window" class="chat-container">
@@ -23,32 +24,31 @@
         <form id="encuestaForm" action="#" method="post">
             <label for="presupuesto">1. ¿Cuál es tu presupuesto para comprar una motocicleta?</label><br>
             <select id="presupuesto" name="presupuesto">
-                <option value="muy_bajo">Muy bajo</option>
-                <option value="bajo">Bajo</option>
-                <option value="medio">Medio</option>
-                <option value="alto">Alto</option>
+                <option value="Bajo">Bajo</option>
+                <option value="Medio">Medio</option>
+                <option value="Alto">Alto</option>
             </select><br>
             
             <label for="potencia">2. ¿Qué nivel de potencia prefieres en una motocicleta?</label><br>
             <select id="potencia" name="potencia">
-                <option value="baja">Baja</option>
-                <option value="media">Media</option>
-                <option value="alta">Alta</option>
+                <option value="Baja">Baja</option>
+                <option value="Media">Media</option>
+                <option value="Alta">Alta</option>
             </select><br>
             
             <label for="uso">3. ¿Cómo describirías tu uso previsto de la motocicleta?</label><br>
             <select id="uso" name="uso">
-                <option value="esporadico">Esporádico</option>
-                <option value="regular">Regular</option>
-                <option value="frecuente">Frecuente</option>
-                <option value="muy_frecuente">Muy frecuente</option>
+                <option value="Esporádico">Esporádico</option>
+                <option value="Regular">Regular</option>
+                <option value="Frecuente">Frecuente</option>
+                <option value="Muy_frecuente">Muy frecuente</option>
             </select><br>
             
             <label for="zona">4. ¿En qué tipo de zona principal usarás la motocicleta?</label><br>
             <select id="zona" name="zona">
-                <option value="rural">Rural</option>
-                <option value="urbana">Urbana</option>
-                <option value="semi_urbana">Semi-Urbana</option>
+                <option value="Rural">Rural</option>
+                <option value="Urbana">Urbana</option>
+                <option value="Semi_urbana">Semi-Urbana</option>
             </select><br>
             
             <button type="button" onclick="evaluarRespuestas()">Evaluar Respuestas</button>
@@ -70,53 +70,9 @@
             const potencia = document.getElementById('potencia').value;
             const uso = document.getElementById('uso').value;
             const zona = document.getElementById('zona').value;
-
-            let recomendacion = '';
-
-            if (presupuesto === 'muy_bajo' && potencia === 'baja' && uso === 'esporadico' && zona === 'rural') {
-                recomendacion = 'Doble propósito';
-            } else if (presupuesto === 'bajo' && potencia === 'baja' && uso === 'regular' && (zona === 'rural' || zona === 'semi_urbana')) {
-                recomendacion = 'Doble propósito';
-            } else if ((presupuesto === 'bajo' || presupuesto === 'medio') && potencia === 'media' && uso === 'regular' && (zona === 'urbana' || zona === 'semi_urbana')) {
-                recomendacion = 'Trabajo';
-            } else if (presupuesto === 'medio' && potencia === 'media' && uso === 'frecuente' && zona === 'semi_urbana') {
-                recomendacion = 'Trabajo';
-            } else if ((presupuesto === 'medio' || presupuesto === 'alto') && potencia === 'alta' && uso === 'frecuente' && zona === 'rural') {
-                recomendacion = 'Deportiva';
-            } else if (presupuesto === 'alto' && potencia === 'alta' && uso === 'muy_frecuente' && zona === 'rural') {
-                recomendacion = 'Deportiva';
-            } else if (presupuesto === 'muy_bajo' && potencia === 'baja' && uso === 'esporadico' && zona === 'urbana') {
-                recomendacion = 'Doble propósito';
-            } else if (presupuesto === 'bajo' && potencia === 'baja' && uso === 'regular' && zona === 'urbana') {
-                recomendacion = 'Doble propósito';
-            } else if (presupuesto === 'bajo' && potencia === 'media' && uso === 'esporadico' && (zona === 'rural' || zona === 'semi_urbana')) {
-                recomendacion = 'Doble propósito';
-            } else if (presupuesto === 'bajo' && potencia === 'media' && uso === 'regular' && zona === 'rural') {
-                recomendacion = 'Doble propósito';
-            } else if ((presupuesto === 'bajo' || presupuesto === 'medio') && potencia === 'media' && uso === 'frecuente' && zona === 'urbana') {
-                recomendacion = 'Trabajo';
-            } else if ((presupuesto === 'bajo' || presupuesto === 'medio') && potencia === 'alta' && uso === 'esporadico' && (zona === 'rural' || zona === 'semi_urbana')) {
-                recomendacion = 'Doble propósito';
-            } else if ((presupuesto === 'bajo' || presupuesto === 'medio') && potencia === 'alta' && uso === 'regular' && zona === 'rural') {
-                recomendacion = 'Doble propósito';
-            } else if (presupuesto === 'medio' && potencia === 'alta' && uso === 'frecuente' && zona === 'urbana') {
-                recomendacion = 'Deportiva';
-            } else if ((presupuesto === 'medio' || presupuesto === 'alto') && potencia === 'alta' && uso === 'muy_frecuente' && zona === 'rural') {
-                recomendacion = 'Deportiva';
-            } else if (presupuesto === 'alto' && potencia === 'alta' && uso === 'muy_frecuente' && zona === 'semi_urbana') {
-                recomendacion = 'Deportiva';
-            } else if (presupuesto === 'medio' && potencia === 'media' && uso === 'esporadico' && (zona === 'rural' || zona === 'semi_urbana')) {
-                recomendacion = 'Doble propósito';
-            } else if (presupuesto === 'medio' && potencia === 'media' && uso === 'regular' && (zona === 'rural' || zona === 'semi_urbana')) {
-                recomendacion = 'Doble propósito';
-            } else if (presupuesto === 'alto' && potencia === 'media' && uso === 'esporadico' && (zona === 'rural' || zona === 'semi_urbana')) {
-                recomendacion = 'Doble propósito';
-            } else if (presupuesto === 'alto' && potencia === 'media' && uso === 'regular' && (zona === 'rural' || zona === 'semi_urbana')) {
-                recomendacion = 'Doble propósito';
-            } else if (presupuesto === 'alto' && potencia === 'media' && uso === 'frecuente' && zona === 'urbana') {
-                recomendacion = 'Trabajo';
-            }
-
+    
+            let recomendacion = obtenerRecomendacion(presupuesto, potencia, uso, zona);
+    
             if (recomendacion !== '') {
                 document.getElementById('recomendacionTexto').textContent = 'Recomendación: ' + recomendacion;
                 document.getElementById('recomendacion').style.display = 'block';
@@ -124,10 +80,234 @@
                 document.getElementById('recomendacion').style.display = 'none';
             }
         }
-
+    
         function limpiarRespuestas() {
             document.getElementById('encuestaForm').reset();
             document.getElementById('recomendacion').style.display = 'none';
+        }
+    
+        function obtenerRecomendacion(presupuesto, potencia, uso, zona) {
+            let recomendacion = '';  
+
+            if (presupuesto === 'Bajo' && potencia === 'Baja' && uso === 'Esporádico' && zona === 'Rural') {
+                recomendacion = 'Trabajo(FT125 ITALIKA)';
+            } else if (presupuesto === 'Bajo' && potencia === 'Baja' && uso === 'Esporádico' && zona === 'Urbana') {
+                recomendacion = 'Trabajo';
+            } else if (presupuesto === 'Bajo' && potencia === 'Baja' && uso === 'Esporádico' && zona === 'Semi_urbana') {
+                recomendacion = 'Trabajo';
+            } else if (presupuesto === 'Bajo' && potencia === 'Baja' && uso === 'Regular' && zona === 'Rural') {
+                recomendacion = 'Trabajo';
+            } else if (presupuesto === 'Bajo' && potencia === 'Baja' && uso === 'Regular' && zona === 'Urbana') {
+                recomendacion = 'Trabajo';
+            } else if (presupuesto === 'Bajo' && potencia === 'Baja' && uso === 'Regular' && zona === 'Semi_urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Baja' && uso === 'Frecuente' && zona === 'Rural') {
+                recomendacion = 'Trabajo';
+            } else if (presupuesto === 'Bajo' && potencia === 'Baja' && uso === 'Frecuente' && zona === 'Urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Baja' && uso === 'Frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Doble propósito';    
+            } else if (presupuesto === 'Bajo' && potencia === 'Baja' && uso === 'Muy_frecuente' && zona === 'Rural') {
+                recomendacion = 'Trabajo';
+            } else if (presupuesto === 'Bajo' && potencia === 'Baja' && uso === 'Muy_frecuente' && zona === 'Urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Baja' && uso === 'Muy_frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Media' && uso === 'Esporádico' && zona === 'Rural') {
+                recomendacion = 'Trabajo';
+            } else if (presupuesto === 'Bajo' && potencia === 'Media' && uso === 'Esporádico' && zona === 'Urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Media' && uso === 'Esporádico' && zona === 'Semi_urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Media' && uso === 'Regular' && zona === 'Rural') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Media' && uso === 'Regular' && zona === 'Urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Media' && uso === 'Regular' && zona === 'Semi_urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Media' && uso === 'Frecuente' && zona === 'Rural') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Media' && uso === 'Frecuente' && zona === 'Urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Media' && uso === 'Frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Media' && uso === 'Muy_frecuente' && zona === 'Rural') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Media' && uso === 'Muy_frecuente' && zona === 'Urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Media' && uso === 'Muy_frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Alta' && uso === 'Esporádico' && zona === 'Rural') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Alta' && uso === 'Esporádico' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Bajo' && potencia === 'Alta' && uso === 'Esporádico' && zona === 'Semi_urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Alta' && uso === 'Regular' && zona === 'Rural') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Alta' && uso === 'Regular' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Bajo' && potencia === 'Alta' && uso === 'Regular' && zona === 'Semi_urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Alta' && uso === 'Frecuente' && zona === 'Rural') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Alta' && uso === 'Frecuente' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Bajo' && potencia === 'Alta' && uso === 'Frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Bajo' && potencia === 'Alta' && uso === 'Muy_frecuente' && zona === 'Rural') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Bajo' && potencia === 'Alta' && uso === 'Muy_frecuente' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Bajo' && potencia === 'Alta' && uso === 'Muy_frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Trabajo';
+            } else if (presupuesto === 'Medio' && potencia === 'Baja' && uso === 'Esporádico' && zona === 'Rural') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Medio' && potencia === 'Baja' && uso === 'Esporádico' && zona === 'Urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Medio' && potencia === 'Baja' && uso === 'Esporádico' && zona === 'Semi_urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Medio' && potencia === 'Baja' && uso === 'Regular' && zona === 'Rural') {
+                recomendacion = 'Trabajo';
+            } else if (presupuesto === 'Medio' && potencia === 'Baja' && uso === 'Regular' && zona === 'Urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Medio' && potencia === 'Baja' && uso === 'Regular' && zona === 'Semi_urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Medio' && potencia === 'Baja' && uso === 'Frecuente' && zona === 'Rural') {
+                recomendacion = 'Trabajo';
+            } else if (presupuesto === 'Medio' && potencia === 'Baja' && uso === 'Frecuente' && zona === 'Urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Medio' && potencia === 'Baja' && uso === 'Frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Medio' && potencia === 'Baja' && uso === 'Muy_frecuente' && zona === 'Rural') {
+                recomendacion = 'Trabajo';
+            } else if (presupuesto === 'Medio' && potencia === 'Baja' && uso === 'Muy_frecuente' && zona === 'Urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Medio' && potencia === 'Baja' && uso === 'Muy_frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Medio' && potencia === 'Media' && uso === 'Esporádico' && zona === 'Rural') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Medio' && potencia === 'Media' && uso === 'Esporádico' && zona === 'Urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Medio' && potencia === 'Media' && uso === 'Esporádico' && zona === 'Semi_urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Medio' && potencia === 'Media' && uso === 'Regular' && zona === 'Rural') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Medio' && potencia === 'Media' && uso === 'Regular' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Medio' && potencia === 'Media' && uso === 'Regular' && zona === 'Semi_urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Medio' && potencia === 'Media' && uso === 'Frecuente' && zona === 'Rural') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Medio' && potencia === 'Media' && uso === 'Frecuente' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Medio' && potencia === 'Media' && uso === 'Frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Medio' && potencia === 'Media' && uso === 'Muy_frecuente' && zona === 'Rural') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Medio' && potencia === 'Media' && uso === 'Muy_frecuente' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Medio' && potencia === 'Media' && uso === 'Muy_frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Medio' && potencia === 'Alta' && uso === 'Esporádico' && zona === 'Rural') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Medio' && potencia === 'Alta' && uso === 'Esporádico' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Medio' && potencia === 'Alta' && uso === 'Esporádico' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Medio' && potencia === 'Alta' && uso === 'Regular' && zona === 'Rural') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Medio' && potencia === 'Alta' && uso === 'Regular' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Medio' && potencia === 'Alta' && uso === 'Regular' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Medio' && potencia === 'Alta' && uso === 'Frecuente' && zona === 'Rural') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Medio' && potencia === 'Alta' && uso === 'Frecuente' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Medio' && potencia === 'Alta' && uso === 'Frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Medio' && potencia === 'Alta' && uso === 'Muy_frecuente' && zona === 'Rural') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Medio' && potencia === 'Alta' && uso === 'Muy_frecuente' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Medio' && potencia === 'Alta' && uso === 'Muy_frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Baja' && uso === 'Esporádico' && zona === 'Rural') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Alto' && potencia === 'Baja' && uso === 'Esporádico' && zona === 'Urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Alto' && potencia === 'Baja' && uso === 'Esporádico' && zona === 'Semi_urbana') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Alto' && potencia === 'Baja' && uso === 'Regular' && zona === 'Rural') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Alto' && potencia === 'Baja' && uso === 'Regular' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Baja' && uso === 'Regular' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Baja' && uso === 'Frecuente' && zona === 'Rural') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Alto' && potencia === 'Baja' && uso === 'Frecuente' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Baja' && uso === 'Frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Baja' && uso === 'Muy_frecuente' && zona === 'Rural') {
+                recomendacion = 'Doble propósito';
+            } else if (presupuesto === 'Alto' && potencia === 'Baja' && uso === 'Muy_frecuente' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Baja' && uso === 'Muy_frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Media' && uso === 'Esporádico' && zona === 'Rural') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Media' && uso === 'Esporádico' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Media' && uso === 'Esporádico' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Media' && uso === 'Regular' && zona === 'Rural') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Media' && uso === 'Regular' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Media' && uso === 'Regular' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Media' && uso === 'Frecuente' && zona === 'Rural') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Media' && uso === 'Frecuente' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Media' && uso === 'Frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Media' && uso === 'Muy_frecuente' && zona === 'Rural') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Media' && uso === 'Muy_frecuente' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Media' && uso === 'Muy_frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Alta' && uso === 'Esporádico' && zona === 'Rural') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Alta' && uso === 'Esporádico' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Alta' && uso === 'Esporádico' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Alta' && uso === 'Regular' && zona === 'Rural') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Alta' && uso === 'Regular' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Alta' && uso === 'Regular' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Alta' && uso === 'Frecuente' && zona === 'Rural') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Alta' && uso === 'Frecuente' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Alta' && uso === 'Frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Alta' && uso === 'Muy_frecuente' && zona === 'Rural') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Alta' && uso === 'Muy_frecuente' && zona === 'Urbana') {
+                recomendacion = 'Deportiva';
+            } else if (presupuesto === 'Alto' && potencia === 'Alta' && uso === 'Muy_frecuente' && zona === 'Semi_urbana') {
+                recomendacion = 'Deportiva';
+            }
+            
+            return recomendacion;
         }
     </script>
 </body>
