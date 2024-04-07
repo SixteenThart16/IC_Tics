@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN MOTOCICLETAS</title>
+    <link rel="icon" href="C:\Users\SixteenTharth16\Documents\GitHub\IC_Tics\U2\CHATBOT\imagenes/moto.ico" type="image/x-icon">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="Formulario" id="loginFormContainer">
+        <h1>INICIO DE SESION</h1>
+        <form id="loginForm">
+            <div class="Username">
+                <input type="text" id="username" name="username" required>
+                <label>Nombre de Usuario</label>
+            </div>
+            <div class="Contraseña">
+                <input type="password" id="password" name="password" required>
+                <label>Contraseña</label>
+            </div>
+            <div class="Recordar"><a href="#" id="olvidoLink">¿Olvidaste tu contraseña?</a></div>
+            <input type="submit" value="Iniciar">
+            <div class="registrate">
+                Quiero hacer el <a href="#" id="registroLink">registro</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="Formulario" id="registroFormContainer" style="display: none;">
+        <h1>REGISTRO</h1>
+        <form id="registerForm">
+            <div class="Username">
+                <input type="text" id="regUsername" name="regUsername" required>
+                <label>Nombre de Usuario</label>
+            </div>
+            <div class="Contraseña">
+                <input type="password" id="regPassword" name="regPassword" required>
+                <label>Contraseña</label>
+            </div>
+            <input type="submit" value="Registrarse">
+            <div class="registrate">
+                <a href="#" id="volverLink">Volver al inicio de sesión</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="Formulario" id="recuperacionFormContainer" style="display: none;">
+        <h1>RECUPERACIÓN DE CONTRASEÑA</h1>
+        <form id="recuperacionForm">
+            <div class="Username">
+                <input type="text" id="recUsername" name="recUsername" required>
+                <label>Nombre de Usuario</label>
+            </div>
+            <input type="submit" value="Recuperar Contraseña">
+            <div class="registrate">
+                <a href="#" id="volverLinkRecuperacion">Volver al inicio de sesión</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
