@@ -143,7 +143,7 @@ function obtenerRecomendacion(presupuesto, potencia, uso, zona) {
     } else if (presupuesto === 'Alto' && potencia === 'Alta' && uso === 'Muy_frecuente' && zona === 'Semi_urbana') {
         recomendacion = 'Deportiva(Ducati Panigale V4 SP, Yamaha YZF-R1M)';
     } else {
-        recomendacion = 'No hay recomendación disponible para esta combinación';
+    
     }
     
     return recomendacion;
